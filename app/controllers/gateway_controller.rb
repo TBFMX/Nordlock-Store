@@ -3,6 +3,7 @@ class GatewayController < ApplicationController
   include PayPal::SDK::REST
   include CurrentCart
   before_action :set_cart
+  #before_action :validate_client
   
   
   def index
@@ -147,5 +148,14 @@ class GatewayController < ApplicationController
 	  @mensajePP = payment.error # Error Hash
 	end
   end	
+
+  def validate_client
+  	@user = User.find_by(id: session[:user_id])
+  	unless Client.find(:user_id, session[:user_id])
+  		
+  	else
+  		
+  	end	
+  end
 
 end

@@ -11,9 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140507174417) do
+ActiveRecord::Schema.define(version: 20140519232813) do
+
+  create_table "addresses", force: true do |t|
+    t.string   "street"
+    t.string   "number"
+    t.string   "colony"
+    t.string   "cp"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "client_id"
+  end
 
   create_table "carts", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "clients", force: true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "phone"
+    t.string   "mail"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -59,6 +81,19 @@ ActiveRecord::Schema.define(version: 20140507174417) do
     t.datetime "updated_at"
   end
 
+  create_table "orders", force: true do |t|
+    t.string   "cart_id"
+    t.string   "user_id"
+    t.integer  "trans_id"
+    t.integer  "adress_id"
+    t.string   "order_date"
+    t.string   "pay_type"
+    t.string   "details"
+    t.decimal  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "products", force: true do |t|
     t.string   "title"
     t.text     "description"
@@ -80,19 +115,31 @@ ActiveRecord::Schema.define(version: 20140507174417) do
     t.datetime "updated_at"
   end
 
+  create_table "transaccions", force: true do |t|
+    t.integer  "client_id"
+    t.integer  "order_id"
+    t.boolean  "payed"
+    t.string   "detail"
+    t.string   "pay_method"
+    t.string   "status"
+    t.string   "authorization_code"
+    t.string   "paydate"
+    t.string   "gateway_id"
+    t.decimal  "total"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "username"
     t.string   "password_digest"
-    t.string   "name"
-    t.string   "lastname"
     t.string   "email"
-    t.date     "login_date"
-    t.date     "password_date"
     t.integer  "rol_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
+    t.integer  "client_id"
   end
 
 end

@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :orders
+
+  resources :transaccions
+
+  resources :clients
+
+  resources :addresses
+
   get 'gateway/index'
   post 'gateway/index'
 

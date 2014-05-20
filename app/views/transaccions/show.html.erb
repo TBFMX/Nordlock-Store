@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @transaccion.client_id %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @transaccion.order_id %>
+</p>
+
+<p>
+  <strong>Payed:</strong>
+  <%= @transaccion.payed %>
+</p>
+
+<p>
+  <strong>Detail:</strong>
+  <%= @transaccion.detail %>
+</p>
+
+<p>
+  <strong>Pay method:</strong>
+  <%= @transaccion.pay_method %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @transaccion.status %>
+</p>
+
+<p>
+  <strong>Authorization code:</strong>
+  <%= @transaccion.authorization_code %>
+</p>
+
+<p>
+  <strong>Paydate:</strong>
+  <%= @transaccion.paydate %>
+</p>
+
+<p>
+  <strong>Gateway:</strong>
+  <%= @transaccion.gateway_id %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @transaccion.total %>
+</p>
+
+<%= link_to 'Edit', edit_transaccion_path(@transaccion) %> |
+<%= link_to 'Back', transaccions_path %>

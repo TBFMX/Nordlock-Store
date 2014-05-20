@@ -1,0 +1,43 @@
+<h1>Listing transaccions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Client</th>
+      <th>Order</th>
+      <th>Payed</th>
+      <th>Detail</th>
+      <th>Pay method</th>
+      <th>Status</th>
+      <th>Authorization code</th>
+      <th>Paydate</th>
+      <th>Gateway</th>
+      <th>Total</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @transaccions.each do |transaccion| %>
+      <tr>
+        <td><%= transaccion.client_id %></td>
+        <td><%= transaccion.order_id %></td>
+        <td><%= transaccion.payed %></td>
+        <td><%= transaccion.detail %></td>
+        <td><%= transaccion.pay_method %></td>
+        <td><%= transaccion.status %></td>
+        <td><%= transaccion.authorization_code %></td>
+        <td><%= transaccion.paydate %></td>
+        <td><%= transaccion.gateway_id %></td>
+        <td><%= transaccion.total %></td>
+        <td><%= link_to 'Show', transaccion %></td>
+        <td><%= link_to 'Edit', edit_transaccion_path(transaccion) %></td>
+        <td><%= link_to 'Destroy', transaccion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Transaccion', new_transaccion_path %>

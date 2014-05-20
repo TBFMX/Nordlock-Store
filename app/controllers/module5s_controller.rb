@@ -1,4 +1,4 @@
-class Module5sController < ApplicationController
+lass Module5sController < ApplicationController
   before_action :autorizar
   before_action :set_module5, only: [:show, :edit, :update, :destroy]
 
