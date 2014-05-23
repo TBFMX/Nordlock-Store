@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'catalogo/index'
+
+  get 'productos/index'
+
+  get 'nosotros/index'
+
   resources :orders
 
   resources :transaccions
@@ -25,14 +31,17 @@ Rails.application.routes.draw do
   resources :carts
   resources :cart
 
-  get 'store/index'
+  get 'store/index', as: 'store'
   
   delete 'line_items/' =>'line_items#destroy'
 
   resources :products
 
 
-  get 'welcome/index'
+  controller :welcome do 
+    get 'welcome/index' => :index
+    post "welcome/index" => :sender
+  end  
 
   resources :module5s
 
@@ -89,12 +98,28 @@ Rails.application.routes.draw do
     get 'new_cambiar_password' => :new_cambiar_password
     post 'new_cambiar_password' => :new_cambiar_password
   end 
+  
+  get 'contacto/index'
+
+  get 'contacto/sender'
+
+  get 'contacto/fail'
+
+  get 'contacto/success'
+
+  controller :contacto do 
+    post "contacto/index" => :sender
+  end
+
+  resources :nosotros
+  resources :productos
+  resources :catalogo
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'store#index', as: 'store'
+  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

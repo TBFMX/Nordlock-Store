@@ -42,6 +42,12 @@ class Mailer < ActionMailer::Base
     mail :to => user.email, :subject => "Su usuario a sido destruido", :from => "\"Conserje\" <info@tbf.mx>", :reply_to =>"conserje@tbf.com"
   end
 
+  def sended(datos)
+    @greeting = "Hi"
+    @datos = datos
+
+    mail(:to => "hugo@tbf.mx", :subject => "Nuevo Mensaje de Contacto NORD-LOCK", :from => "\"Conserje\" <info@tbf.mx>", :reply_to =>"conserje@tbf.com")
+  end
 
   
 end

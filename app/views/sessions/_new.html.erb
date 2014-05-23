@@ -1,4 +1,5 @@
-
+<div class="contenido">
+	<div class="login">
 <% unless User.find_by(id: session[:user_id]) %>
 <%= form_tag do %>
 	<div>
@@ -16,9 +17,11 @@
 
 	<div>
 		<%#= link_to "Recuperar Password", new_recover_password_path %>
-		<p><%= link_to "forgotten password?", new_password_reset_path %></p>		
+		<p><%= link_to "forgotten password?", new_password_reset_path, class: 'blanco' %></p>		
 	</div>
 <% else %>
 	<p>Bienvenido <%= "#{session[:uname]}"%></p>
 	<%= button_to 'Logout', logout_path, method: :delete %>
 <%end %>
+</div>
+</div>

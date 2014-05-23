@@ -1,0 +1,28 @@
+<%= form_tag do |person| %> 
+  <div class="tituloforma">Contacto</div>
+
+  <label for="name"><span class="required">*</span>Nombre</label>
+  <%= text_field_tag :nombre,nil,autofocus: true, required: true, placeholder: "Nombre" %>  
+
+  <label for="email"><span class="required">*</span>Correo electrónico</label> 
+  <%= email_field_tag :email,nil,autofocus: true, required: true, placeholder: "tu@email.com" %>  
+
+  <label for="empresa">Compañia / Empresa</label> 
+  <%= text_field_tag :empresa,nil,autofocus: true, placeholder: "Compañia / Empresa" %> 
+
+  <label for="telefono">Teléfono</label> 
+  <%= text_field_tag :telefono,nil,autofocus: true, placeholder: "Teléfono" %> 
+
+  <label for="cp">Código Postal</label>      
+  <%= text_field_tag :cp,nil,autofocus: true, placeholder: "Código Postal" %> 
+
+  <label for="pais">País</label> 
+  <%= text_field_tag :pais,nil,autofocus: true, placeholder: "País" %>   
+
+  <label for="comentarios">Comentarios</label> 
+  <%= text_area_tag :comentarios,nil,autofocus: true, required: true, placeholder: "Escriba su comentario aquí." %>
+           
+	<%= submit_tag "Enviar", id: "submit", class: 'boton' %>        
+  <%#= submit_tag "MEDIDAS A COTIZAR", id: "cotizar", class: 'boton' %> 
+  <div class="nota"><span class="required">*</span>Información obligatoria.</div>             
+<% end %>

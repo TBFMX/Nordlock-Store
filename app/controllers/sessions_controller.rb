@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
       session[:mod5] =rol.module_5
       #termina variables de rol
 
-  		redirect_to store_url
+  		redirect_to root_url
   	else
   		redirect_to login_url, alert: "Invalid user/password combination"
   	end

@@ -42,7 +42,19 @@ class WelcomeController < ApplicationController
   	session[:user_id] = nil
   	redirect_to login_url, notice: "Logged out"
   end
+  
 
+  def sender
+    @datos = contacto_params
+    Mailer.sended(@datos).deliver 
+    redirect_to root_url, notice: "Mensaje enviado"
+  end  
+
+  private
+
+  def contacto_params
+    params.permit(:nombre, :email, :empresa, :telefono, :cp, :pais, :comentarios)
+  end
 
 
 end
