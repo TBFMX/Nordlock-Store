@@ -7,6 +7,7 @@ body{
 	background-color: #F2F2F2;
 	font-family:Arial, Helvetica, sans-serif;
 }
+
 /*--Barra login-----------------------------------------------------*/
 
 .barra_login{ 					/* Contenedor de todo el banner*/
@@ -118,9 +119,7 @@ body{
 /*--contenido_generico-----------------------------------------------------*/
 
 .contenido{
-	width: 960px;
-	padding-top: 10px;	
-	padding-bottom: 10px;		
+	width: 960px;		
 	margin:0 auto 0 auto;
 	background-color: #FFFFFF;
 	font-family:Arial, Helvetica, sans-serif;
@@ -576,11 +575,14 @@ a.olvidePass:hover { /*Mause sobre el link*/
 
 /*-------Estilo Pagina catalogo--------------------------------*/
 
-.descripcion_catalogo{
-	padding: 20px;		
-	width: 920px;
+.descripcion_catalogo{	
+	width: 960px;
 	margin:0 auto 0 auto;
-	background-color: #FFFFFF;
+	background-color: #f2f2f2;
+}
+
+.descripcion_catalogo p{		
+	color:#A6B3B3;
 }
 
 .descripcion_catalogo h1{
@@ -595,41 +597,48 @@ a.olvidePass:hover { /*Mause sobre el link*/
 	border-color: #6699B3;
 }
 
-.catalogo{
-	padding: 20px;		
-	width: 920px;
+.catalogo{		
+	width: 960px;
 	margin:0 auto 0 auto;
 	background-color: #FFFFFF;
 	float: left;
 }
 
 	.catalogo .producto{		
-		width: 460px;
-		height: 360px;
+		width: 470px;
+		height: 480px;
 		float: left;
+		border: 5px solid;
+		border-color:#F2F2F2;
 	}
 
 	.catalogo .producto .imagen{
-		margin: 10px;
-		width: 460px;
+		margin: 5px;
+		width: 470px;
 		height: 260px;
 		margin:0 auto 0 auto;
 	}
 
 	.catalogo .producto .nombre{
+		padding-top: 10px;
 		margin: 10px;
 		height: 80px;
 		padding-right: 20px;
+		padding-left: 20px;
 		text-align: center;
 		font-size: 25px;
 		color: #666666;
+		background-color: #e6e6e6;
 	}
 
-	.catalogo .producto .nombre em{
-		font-style: none;
-		font-size: 20px;
-		font-weight: 300;
-		color: #666666;
+	.catalogo .producto p{		
+		padding-left: 20px;
+		padding-right: 20px;
+		color:#A6B3B3;
+	}
+
+	.catalogo .producto .nombre_chico{
+		font-size: 14px;
 	}
 
 	.catalogo .producto .nombre:hover{
