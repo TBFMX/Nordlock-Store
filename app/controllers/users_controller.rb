@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
   #before_action :autorizar
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authorize, only: [:recover_password, :new_recover_password]
-  skip_before_action :autorizar, only: [:cambiar_password, :new_cambiar_password]
+  #se agregaron el new y el create a las excepciones para que el usuario pueda registrarse
+  skip_before_action :authorize, only: [:recover_password, :new_recover_password, :new, :create]
+  skip_before_action :autorizar, only: [:cambiar_password, :new_cambiar_password, :new, :create]
   
   # GET /users
   # GET /users.json
@@ -39,7 +40,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         Mailer.create_user(@user).deliver
-        format.html { redirect_to @user, notice: "El usuario #{@user.username} fue creado exitosamente." }
+        format.html { redirect_to login_path, notice: "El usuario #{@user.username} fue creado exitosamente." }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -53,7 +54,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: "El usuario #{@user.username} fue actualizado exitosamente." }
+        format.html { redirect_to root_path, notice: "El usuario #{@user.username} fue actualizado exitosamente." }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
