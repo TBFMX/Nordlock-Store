@@ -46,5 +46,7 @@ gem 'paypal-sdk-rest'
 gem 'multi_json'
 
 #group :production do
-#	gem 'mysql2' 
+	gem 'mysql2' 
 #end
+
+gem 'exception_notification'
