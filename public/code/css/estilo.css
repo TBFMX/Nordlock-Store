@@ -151,26 +151,26 @@ a.blanco:hover { /*Mause sobre el link*/
 
 /*----------*/
 
-a.gris{ /* Link no visitado*/
+a.azul{ /* Link no visitado*/
 	text-decoration:none; 
 } 				
 
-a.gris:link { /* Link no visitado*/
+a.azul:link { /* Link no visitado*/
 	text-decoration:none; 
 	} 
 
-a.gris:visited { /*Link visitado*/
+a.azul:visited { /*Link visitado*/
 	text-decoration:none; 
 	color: #666666;	
 	} 
 
-a.gris:active {/*Link activo*/
+a.azul:active {/*Link activo*/
 	text-decoration:none; 
 	} 
 
-a.gris:hover { /*Mause sobre el link*/
+a.azul:hover { /*Mause sobre el link*/
 	text-decoration:none; 
-	color: #000000;	
+	color: #FFFFFF;	
 	} 
 
 
@@ -180,10 +180,7 @@ a.gris:hover { /*Mause sobre el link*/
 }
 
 .slideshow_fijo{
-	width: 960px;
-	height: 350px;
-	margin:0 auto 0 auto;	
-	background-color:#66DDFF; 
+	max-width: 960px;
 }
 
 /*--Login-----------------------------------------------------*/
@@ -525,7 +522,7 @@ a.olvidePass:hover { /*Mause sobre el link*/
 		width: 460px;
 		height: 400px;
 		float: right;
-		background-color: #666666;
+		margin:0 auto 0 auto;
 
 	}
 
@@ -614,9 +611,9 @@ a.olvidePass:hover { /*Mause sobre el link*/
 
 	.catalogo .producto .imagen{
 		margin: 10px;
-		height: 280px;
-		background-color: #ff0000;
-		text-align: center;
+		width: 460px;
+		height: 260px;
+		margin:0 auto 0 auto;
 	}
 
 	.catalogo .producto .nombre{
@@ -639,8 +636,8 @@ a.olvidePass:hover { /*Mause sobre el link*/
 		margin: 10px;
 		text-align: center;
 		font-size: 25px;
-		color: #222222;
-		background-color: #6699B3;
+		color: #FFFFFF;
+		background-color: #66DDFF;
 	}
 
 

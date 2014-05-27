@@ -2,25 +2,25 @@
   <div class="tituloforma">Contacto</div>
 
   <label for="name"><span class="required">*</span>Nombre</label>
-  <%= text_field_tag :nombre,nil,autofocus: true, required: true, placeholder: "Nombre" %>  
+  <%= text_field_tag :nombre,nil, required: true, placeholder: "Nombre" %>  
 
   <label for="email"><span class="required">*</span>Correo electrónico</label> 
-  <%= email_field_tag :email,nil,autofocus: true, required: true, placeholder: "tu@email.com" %>  
+  <%= email_field_tag :email,nil, required: true, placeholder: "tu@email.com" %>  
 
   <label for="empresa">Compañia / Empresa</label> 
-  <%= text_field_tag :empresa,nil,autofocus: true, placeholder: "Compañia / Empresa" %> 
+  <%= text_field_tag :empresa,nil, placeholder: "Compañia / Empresa" %> 
 
   <label for="telefono">Teléfono</label> 
-  <%= text_field_tag :telefono,nil,autofocus: true, placeholder: "Teléfono" %> 
+  <%= text_field_tag :telefono,nil, placeholder: "Teléfono" %> 
 
   <label for="cp">Código Postal</label>      
-  <%= text_field_tag :cp,nil,autofocus: true, placeholder: "Código Postal" %> 
+  <%= text_field_tag :cp,nil, placeholder: "Código Postal" %> 
 
   <label for="pais">País</label> 
-  <%= text_field_tag :pais,nil,autofocus: true, placeholder: "País" %>   
+  <%= text_field_tag :pais,nil, placeholder: "País" %>   
 
   <label for="comentarios">Comentarios</label> 
-  <%= text_area_tag :comentarios,nil,autofocus: true, required: true, placeholder: "Escriba su comentario aquí." %>
+  <%= text_area_tag :comentarios,nil, required: true, placeholder: "Escriba su comentario aquí." %>
            
 	<%= submit_tag "Enviar", id: "submit", class: 'boton' %>        
   <%#= submit_tag "MEDIDAS A COTIZAR", id: "cotizar", class: 'boton' %> 
