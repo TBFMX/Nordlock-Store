@@ -7,6 +7,19 @@ body{
 	background-color: #F2F2F2;
 	font-family:Arial, Helvetica, sans-serif;
 }
+/*--Barra login-----------------------------------------------------*/
+
+.barra_login{ 					/* Contenedor de todo el banner*/
+	width: 960px;
+	height: 14px;
+	font-size: 10px;
+	font-weight: 300;
+	margin:0 auto 0 auto;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	text-align: right;	
+}
+
 
 /*--banner-----------------------------------------------------*/
 
@@ -16,8 +29,7 @@ body{
 	font-size: 13px;
 	font-weight: 300;
 	margin:0 auto 0 auto;
-	text-align: center;
-	font-family:Arial, Helvetica, sans-serif;	
+	text-align: center;	
 }
 
 	.logo{						/* Seccion del logo*/
