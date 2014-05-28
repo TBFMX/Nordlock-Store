@@ -19,17 +19,8 @@ ExceptionNotification.configure do |config|
   config.add_notifier :email, {
     :email_prefix         => "[ERROR] ",
     :sender_address       => %{"Notifier" <notifier@example.com>},
-    :exception_recipients => %w{exceptions@example.com},
-    :delivery_method => :smtp,
-        smtp_settings = {
-          :address              => "smtp.gmail.com",
-          :port                 => 587,
-          :domain               => "tbf.mx",
-          :user_name            => "carlos.acosta8912@gmail.com",
-          :password             => "zxzctoklynlrtuvg",
-          :authentication       => :login,
-          :enable_starttls_auto => true  
-        }
+    :exception_recipients => %w{exceptions@example.com}
+    
 
   }
 

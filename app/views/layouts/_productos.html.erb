@@ -32,50 +32,55 @@
         <td>No. Articulo</td>
         <td class="tabla_encabezado_griss">Cantidad por pares</td>
       </tr>
-      <tr class="tabla_contenido">
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-      </tr>
-      <tr class="tabla_contenido">
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-      </tr>
-      <tr class="tabla_contenido">
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-      </tr>
-      <tr class="tabla_contenido">
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-        <td>xxx</td>
-      </tr>
+      <tbody>
+        <% @products.each do |product| %>
+          <tr class="tabla_contenido">
+            <td><%= product.washer_size %></td>
+            <td><%= product.bolt_size_metric %></td>
+            <td><%= product.bolt_size_unc %></td>
+            <td><%= product.diameter_inside %></td>
+            <td><%= product.diameter_outside %></td>
+            <td><%= product.thickness_T %></td>
+            <td><%= product.min_package %></td>
+            <td><%= product.weight %></td>
+            <td><%= product.art_no %></td>
+          </tr>
+        <% end %>  
+          <!--
+          <tr class="tabla_contenido">
+            <td>xxx</td>
+            <td>xxx</td>
+            <td>xxx</td>
+            <td>xxx</td>
+            <td>xxx</td>
+            <td>xxx</td>
+            <td>xxx</td>
+            <td>xxx</td>
+            <td>xxx</td>
+          </tr>
+          <tr class="tabla_contenido">
+            <td>xxx</td>
+            <td>xxx</td>
+            <td>xxx</td>
+            <td>xxx</td>
+            <td>xxx</td>
+            <td>xxx</td>
+            <td>xxx</td>
+            <td>xxx</td>
+            <td>xxx</td>
+          </tr>
+          <tr class="tabla_contenido">
+            <td>xxx</td>
+            <td>xxx</td>
+            <td>xxx</td>
+            <td>xxx</td>
+            <td>xxx</td>
+            <td>xxx</td>
+            <td>xxx</td>
+            <td>xxx</td>
+            <td>xxx</td>
+          </tr>-->
+        </tbody>
     </table>
     </div> 
 

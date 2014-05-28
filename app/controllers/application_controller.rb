@@ -36,9 +36,9 @@ class ApplicationController < ActionController::Base
   end
   def secure_save(variable)
       begin
-       if variable.save
+        if variable.save
           return true
-
+        end
     rescue ActiveRecord::RecordNotFound    
       # handle not found error
       logger.error "no se encontro el registro que se solicito"
@@ -53,9 +53,10 @@ class ApplicationController < ActionController::Base
     end
   end
   def var_verify(variable)
-      begin
+    begin
       if variable
           return true
+      end
     rescue ActiveRecord::RecordNotFound    
       # handle not found error
       logger.error "no se encontro el registro que se solicito"
@@ -66,8 +67,7 @@ class ApplicationController < ActionController::Base
           rescue # StandardError
       # handle most other errors
     rescue Exception
-      # handle everything else
-      
+      # handle everything else   
     end
   end
   def server_error(exception)
