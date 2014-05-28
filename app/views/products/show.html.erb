@@ -11,14 +11,50 @@
 </p>
 
 <p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
+  <strong>Washer Size:</strong>
+  <%= @product.washer_size %>
 </p>
 
 <p>
-  <strong>Unit price:</strong>
-  <%= @product.unit_price %>
+  <strong>Bolt size metric:</strong>
+  <%= @product.bolt_size_metric %>
 </p>
 
+<p>
+  <strong>Bolt size UNC:</strong>
+  <%= @product.bolt_size_unc %>
+</p>
+
+<p>
+  <strong>Diameter inside:</strong>
+  <%= @product.diameter_inside %>
+</p>
+
+<p>
+  <strong>Diameter outside:</strong>
+  <%= @product.diameter_outside %>
+</p>
+
+<p>
+  <strong>Thickness T:</strong>
+  <%= @product.thickness_T %>
+</p>
+
+<p>
+  <strong>Min Package</strong>
+  <%= @product.min_package %>
+</p>
+
+<p>
+  <strong>Weight</strong>
+  <%= @product.weight %>
+</p>
+
+<p>
+  <strong>Art No.</strong>
+  <%= @product.art_no %>
+</p>
+
+
 <%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<%= link_to 'Back', products_path %> 
