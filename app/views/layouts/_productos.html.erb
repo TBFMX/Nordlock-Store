@@ -22,15 +22,17 @@
     <div class="centrar">
       <table class="tabla_formato" width="900" border="0" cellpadding="0" cellspacing="0">
       <tr class="tabla_encabezado_azul">
-        <td>Medida de arandela</td>
-        <td>Medida de tornillo</td>
-        <td>[mm]</td>
-        <td>[mm]</td>
+        <td>Medida de <br /> arandela</td>
+        <td>Medida [mm]</td>
+        <td>Medida [inch]</td>
+        <td>Diametro <br />interno</td>
+        <td>Diametro <br />externo</td>
         <td>Grosor T</td>
-        <td>Cantidad min.</td>
-        <td>Peso Aprox</td>
-        <td>No. Articulo</td>
+        <td>Piezas x <br /> paquete</td>
+        <td>Peso</td>
+        <td>no. Art</td>        
         <td class="tabla_encabezado_griss">Cantidad por pares</td>
+         <td></td>
       </tr>
       <tbody>
         <% @products.each do |product| %>
@@ -44,6 +46,8 @@
             <td><%= product.min_package %></td>
             <td><%= product.weight %></td>
             <td><%= product.art_no %></td>
+            <td><%= text_field_tag :cantidad,nil, placeholder: "0", pattern: "[0-9]", size: "5" %></td>
+            <td><%= button_to 'Agregar', line_items_path(product_id: product), remote: true %></td>
           </tr>
         <% end %>  
           <!--
