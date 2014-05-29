@@ -45,7 +45,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'paypal-sdk-rest'
 gem 'multi_json'
 
-
-gem 'mysql2'
+group :production do
+	gem 'mysql2'
+end
 
 gem 'exception_notification'
