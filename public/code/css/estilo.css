@@ -83,7 +83,7 @@ body{
 			height: 26px;
 			border: 2px solid;	
 			background-color: #66DDFF;	
-			border-color: #FFFFFF;		
+			border-color: #F2F2F2;		
 		}
 
 			.menu_banner:hover{
@@ -464,6 +464,7 @@ a.olvidePass:hover { /*Mause sobre el link*/
 			width: 450px;
 			color: #FFFFFF;  
 			padding-top: 10px;
+			text-align: left;
 
 		}
 

@@ -11,10 +11,10 @@
   <%= text_field_tag :empresa,nil, placeholder: "Compañia / Empresa" %> 
 
   <label for="telefono">Teléfono</label> 
-  <%= text_field_tag :telefono,nil, placeholder: "Teléfono" %> 
+  <%= text_field_tag :telefono,nil, placeholder: "Teléfono", pattern: "[0-9]*" %> 
 
   <label for="cp">Código Postal</label>      
-  <%= text_field_tag :cp,nil, placeholder: "Código Postal" %> 
+  <%= text_field_tag :cp,nil, placeholder: "Código Postal", maxlength: "5", min: "0", pattern: "[0-9]{5}"%> 
 
   <label for="pais">País</label> 
   <%= text_field_tag :pais,nil, placeholder: "País" %>   
