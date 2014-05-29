@@ -13,13 +13,36 @@ body{
 .barra_login{ 					/* Contenedor de todo el banner*/
 	width: 960px;
 	height: 14px;
-	font-size: 10px;
+	font-size: 13px;
 	font-weight: 300;
 	margin:0 auto 0 auto;
 	padding-top: 2px;
 	padding-bottom: 2px;
 	text-align: right;	
+	color: #a6b3b3;
 }
+
+.barra_login a{
+	text-decoration: none;
+	color: #a6b3b3;
+}			
+
+.barra_login a:link { /* Link no visitado*/
+	text-decoration:none; 
+	} 
+
+.barra_login a:visited { /*Link visitado*/
+	text-decoration:none; 
+	} 
+
+.barra_login a:active {/*Link activo*/
+	text-decoration:none; 
+	background:#A6B3B3;
+	} 
+
+.barra_login a:hover { /*Mause sobre el link*/
+	text-decoration:underline; 
+	} 
 
 
 /*--banner-----------------------------------------------------*/
@@ -374,7 +397,6 @@ a.olvidePass:hover { /*Mause sobre el link*/
 	
 
 /*-----forma--------------------------------*/
-
 	.contact-form { 
 		width: 470px;
 		height: 400px;
@@ -385,9 +407,30 @@ a.olvidePass:hover { /*Mause sobre el link*/
 	   	background-color: #a6b3b3;
 	   	text-align: center;
 	   	font-family:Arial, Helvetica, sans-serif;	
+	   	 position: relative;
 	}
 
-		.tituloforma{
+		.notice{
+			position:absolute;
+			left:0px;
+			top:175px;
+			z-index:1;			
+			font-size: 36px; 
+			background-color: #66DDFF;
+			width: 100%;
+			height: 60px;
+			color: #FFFFFF;	
+			padding-top: 12px;
+  			-webkit-animation: fadein 10s; /* Safari and Chrome */
+       		-moz-animation: fadein 10s; /* Firefox */
+        	-ms-animation: fadein 10s; /* Internet Explorer */
+         	-o-animation: fadein 10s; /* Opera */
+            animation: fadein 10s;
+			opacity: 0;          
+			}
+
+
+		.contact-form .tituloforma{
 			width: 100%;			
 			height: 50px;	
 			font-size: 36px;
@@ -399,13 +442,13 @@ a.olvidePass:hover { /*Mause sobre el link*/
 		.contact-form input,     
 		.contact-form textarea,   
 		.contact-form label { 
-		   font-size: 15px; 
+		   font-size: 13px; 
 		   margin-bottom: 2px;
 		   font-family: Arial, san-serif;		   
 		} 
   
 		.contact-form label {
-		   width: 160px;
+		   width: 140px;
 		   float: left;
 		   text-align: right;
 		   color:#FFFFFF;
@@ -420,13 +463,15 @@ a.olvidePass:hover { /*Mause sobre el link*/
 		.contact-form #cp, 		
 		.contact-form #comentarios, 								  
 		.contact-form textarea { 
-		   width: 250px;
+		   width: 280px;
+		   font-size: 13px; 
 		   background: #fff;
 		   border: 0;
-		   -moz-border-radius: 5px; 
+		   /*-moz-border-radius: 5px; 
 		   -webkit-border-radius: 5px; 
-		   border-radius: 5px;
-		   margin-bottom: 10px; 
+		   border-radius: 5px;*/
+		   margin-bottom: 10px;
+		   margin-right: 20px; 
 		   padding: 3px; 
 		} 	
 
@@ -438,16 +483,20 @@ a.olvidePass:hover { /*Mause sobre el link*/
 		.contact-form textarea { 
 		   height: 50px;   
 		} 
+
+		.contenedor_botones{
+			width: 95%;
+			text-align: right;
+		}
 		 
 		.contact-form .boton { 	
 			font-size: 13px;
-			font-weight: 900;
-			padding-top: 5px;
-			padding-bottom: 5px;
-			width: 180px;
-			height: 30px;
+			font-weight: 400;
+			margin-top: 5px;
+			width: 145px;
+			height: 23px;
 			border: 2px solid;	
-			border-radius: 5px;	
+			/*border-radius: 5px;*/
 			color: #FFFFFF;	
 			background-color: #66DDFF;	
 			border-color: #66DDFF;
@@ -465,6 +514,7 @@ a.olvidePass:hover { /*Mause sobre el link*/
 			color: #FFFFFF;  
 			padding-top: 10px;
 			text-align: left;
+			font-size: 13px;
 
 		}
 
@@ -754,3 +804,39 @@ a.olvidePass:hover { /*Mause sobre el link*/
 		background-color: #FFFFFF;	
 		text-align: center;	
 	}
+
+
+/*-----------animaciones ----------*/
+			@keyframes fadein {
+			    from { opacity: 1; }
+			    50% { opacity: 1; }
+			    to   { opacity: 0; }
+			}
+
+			/* Firefox */
+			@-moz-keyframes fadein {
+			    from { opacity: 1; }
+			    50% { opacity: 1; }
+			    to   { opacity: 0; }
+			}
+
+			/* Safari and Chrome */
+			@-webkit-keyframes fadein {
+			    from { opacity: 1; }
+			    50% { opacity: 1; }
+			    to   { opacity: 0; }
+			}
+
+			/* Internet Explorer */
+			@-ms-keyframes fadein {
+			    from { opacity: 1; }
+			    50% { opacity: 1; }
+			    to   { opacity: 0; }
+			}​
+
+			/* Opera */
+			@-o-keyframes fadein {
+			    from { opacity: 1; }
+			    50% { opacity: 1; }
+			    to   { opacity: 0; }
+			}​

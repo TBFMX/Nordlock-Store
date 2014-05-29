@@ -1,8 +1,5 @@
-    <meta charset="utf-8" />
+	<meta charset="utf-8" />
     <title>Header</title>
-    <link rel="stylesheet" type="text/css" href="code/css/estilo.css"> 
-     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
 <div class="banner">
 	<div class="logo"><%= link_to image_tag("logo.png"), root_url %></div>
 	<form class="buscador">
@@ -13,7 +10,7 @@
 			<div class="menu_banner"><%=  link_to 'NOSOTROS', "/nosotros",class: 'blanco' %></div>		
 			<div class="menu_banner"><%=  link_to 'PRODUCTOS', "/productos",class: 'blanco'  %></div>	
 			<div class="menu_banner"><a href="#" class="blanco">CLIENTES</a></div>		
-			<div class="menu_banner"><a href="#" class="blanco">CONTACTO</a></div>									
+			<div class="menu_banner"><%=  link_to 'CONTACTO', "/contacto",class: 'blanco'  %></div>	</div>									
 		</div>	
 	</div>
 </html>

@@ -1,7 +1,7 @@
 <div class="barra_login">
 	<% unless User.find_by(id: session[:user_id]) %>
-		Bienvenido visitante <%= link_to 'Iniciar sesión', login_path %> | Registrarse
+		Bienvenido visitante <strong><%= link_to 'Iniciar sesión', login_path %></strong> | <strong>Registrarse</strong>
 	<% else %>
-	    Bienvenido <%= session[:uname] %> | <%= link_to 'Logout', logout_path, method: :delete %>
+	    Bienvenido <strong> <%= session[:uname] %></strong> | <%= link_to 'Logout', logout_path, method: :delete %>
 	<%end %>
 </div>
