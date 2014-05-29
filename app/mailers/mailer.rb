@@ -10,7 +10,7 @@ class Mailer < ActionMailer::Base
     @greeting = "Hi"
     @user = user
     #mail to: uemail
-    mail(:to => uemail, :subject => "Password Reset", :from => "\"Conserje\" <info@tbf.mx>")
+    mail(:to => uemail, :subject => "Password Reset", :from => "Arturito")
 
   end
 
@@ -24,30 +24,35 @@ class Mailer < ActionMailer::Base
     @greeting = "Hi"
     @user = user
     #mail to: uemail
-    mail(:to => uemail, :subject => "Recuperacion de Password", :from => "\"Conserje\" <info@tbf.mx>", :reply_to =>"conserje@tbf.com")
+    mail(:to => uemail, :subject => "Recuperacion de Password", :from => "Arturito", :reply_to =>"arturito@tbf.mx")
   end
 
   def password_reset(user)
     @user = user
-    mail :to => user.email, :subject => "Password Reset" , :from => "\"Conserje\" <info@tbf.mx>", :reply_to =>"conserje@tbf.com"
+    mail :to => user.email, :subject => "Password Reset" , :from => "Arturito", :reply_to =>"arturito@tbf.mx"
   end
 
   def create_user(user)
     @user = user
-    mail :to => user.email, :subject => "Se creo su usuario", :from => "\"Conserje\"<info@tbf.mx>", :reply_to =>"conserje@tbf.com"
+    mail :to => user.email, :subject => "Se creo su usuario", :from => "\"Conserje\"<info@tbf.mx>", :reply_to =>"arturito@tbf.mx"
   end
 
   def destroy_user(user)
     @user = user
-    mail :to => user.email, :subject => "Su usuario a sido destruido", :from => "\"Conserje\" <info@tbf.mx>", :reply_to =>"conserje@tbf.com"
+    mail :to => user.email, :subject => "Su usuario a sido destruido", :from => "Arturito", :reply_to =>"arturito@tbf.mx"
   end
 
   def sended(datos)
     @greeting = "Hi"
     @datos = datos
 
-    mail(:to => "hugo@tbf.mx", :subject => "Nuevo Mensaje de Contacto NORD-LOCK", :from => "\"Conserje\" <info@tbf.mx>", :reply_to =>"conserje@tbf.com")
+    mail(:to => "hugo@tbf.mx", :subject => "Nuevo Mensaje de Contacto NORD-LOCK", :from => "Arturito", :reply_to =>"arturito@tbf.mx")
   end
+
+  def cotizacion(mail,umail)
+    
+    mail(:to => mail, :subject => "Nuevo pedido", :from => "Arturito", :reply_to =>"arturito@tbf.mx")
+  end  
 
   
 end

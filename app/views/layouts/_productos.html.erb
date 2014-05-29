@@ -36,54 +36,26 @@
       </tr>
       <tbody>
         <% @products.each do |product| %>
-          <tr class="tabla_contenido">
-            <td><%= product.washer_size %></td>
-            <td><%= product.bolt_size_metric %></td>
-            <td><%= product.bolt_size_unc %></td>
-            <td><%= product.diameter_inside %></td>
-            <td><%= product.diameter_outside %></td>
-            <td><%= product.thickness_T %></td>
-            <td><%= product.min_package %></td>
-            <td><%= product.weight %></td>
-            <td><%= product.art_no %></td>
-            <td><%= text_field_tag :cantidad,nil, placeholder: "0", pattern: "[0-9]", size: "5" %></td>
-            <td><%= button_to 'Agregar', line_items_path(product_id: product), remote: true %></td>
-          </tr>
+          
+            <tr class="tabla_contenido">
+              <td><%= product.washer_size %></td>
+              <td><%= product.bolt_size_metric %></td>
+              <td><%= product.bolt_size_unc %></td>
+              <td><%= product.diameter_inside %></td>
+              <td><%= product.diameter_outside %></td>
+              <td><%= product.thickness_T %></td>
+              <td><%= product.min_package %></td>
+              <td><%= product.weight %></td>
+              <td><%= product.art_no %></td>
+              <%= form_tag(line_items_path , remote: true) do %>
+              <%= hidden_field_tag "product_id", "#{product.id}"%>
+              <td><%= number_field_tag "quantity" %>
+              <%= submit_tag 'Agregar' %></td>
+              <% end %>
+            </tr>
+          
         <% end %>  
-          <!--
-          <tr class="tabla_contenido">
-            <td>xxx</td>
-            <td>xxx</td>
-            <td>xxx</td>
-            <td>xxx</td>
-            <td>xxx</td>
-            <td>xxx</td>
-            <td>xxx</td>
-            <td>xxx</td>
-            <td>xxx</td>
-          </tr>
-          <tr class="tabla_contenido">
-            <td>xxx</td>
-            <td>xxx</td>
-            <td>xxx</td>
-            <td>xxx</td>
-            <td>xxx</td>
-            <td>xxx</td>
-            <td>xxx</td>
-            <td>xxx</td>
-            <td>xxx</td>
-          </tr>
-          <tr class="tabla_contenido">
-            <td>xxx</td>
-            <td>xxx</td>
-            <td>xxx</td>
-            <td>xxx</td>
-            <td>xxx</td>
-            <td>xxx</td>
-            <td>xxx</td>
-            <td>xxx</td>
-            <td>xxx</td>
-          </tr>-->
+          
         </tbody>
     </table>
     </div> 

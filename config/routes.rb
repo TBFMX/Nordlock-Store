@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'review_cart/index'
+
+  get 'review_cart/sender'
+
   get 'catalogo/index'
 
   get 'productos/index'
@@ -114,9 +118,11 @@ Rails.application.routes.draw do
   resources :nosotros
   resources :productos
   resources :catalogo
+  resources :review_cart
 
   get '*unmatched_route', :to => 'application#raise_not_found2'
 
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -3,4 +3,5 @@ class ProductosController < ApplicationController
   def index
   	@products = Product.all
   end
+  
 end
