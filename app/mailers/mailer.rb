@@ -49,9 +49,10 @@ class Mailer < ActionMailer::Base
     mail(:to => "hugo@tbf.mx", :subject => "Nuevo Mensaje de Contacto NORD-LOCK", :from => "Arturito", :reply_to =>"arturito@tbf.mx")
   end
 
-  def cotizacion(mail,umail)
-    
-    mail(:to => mail, :subject => "Nuevo pedido", :from => "Arturito", :reply_to =>"arturito@tbf.mx")
+  def cotizacion(mail,cart)
+    @user = get_user
+    usermail = get_mail
+    mail(:to => mail, :subject => "Nuevo pedido", :from => "Arturito", :reply_to =>usermail)
   end  
 
   

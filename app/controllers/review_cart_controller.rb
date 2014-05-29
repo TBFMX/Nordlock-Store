@@ -4,6 +4,6 @@ class ReviewCartController < ApplicationController
   end
 
   def sender
-  	 Mailer.create_user("arturito@tbf.mx").deliver
+  	 Mailer.create_user("arturito@tbf.mx",@cart).deliver
   end
 end

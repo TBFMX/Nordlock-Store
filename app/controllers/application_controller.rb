@@ -84,6 +84,15 @@ class ApplicationController < ActionController::Base
   end
 
 
+  def get_user
+    @user = User.find_by(id: session[:user_id])
+    return @user
+  end
+  
+  def get_mail
+    @user = User.find_by(id: session[:user_id])
+    return @user.mail
+  end    
 
   
 
