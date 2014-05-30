@@ -23,6 +23,6 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  database: xxx
-  username: user
-  password: password
+  database: Nordlock
+  username: root
+  password: c008
