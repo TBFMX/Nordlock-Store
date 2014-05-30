@@ -1,4 +1,37 @@
-<h1>Contacto#send</h1>
-<p>Find me in app/views/contacto/send.html.erb</p>
+ <meta http-equiv="Refresh" content="9;url=/contacto">
 
-<p> hola <%= puts @datos %></p>
+  <div class="contact-form2">
+	<div class="contact-form">
+		<%= form_tag do |person| %> 
+		  <div class="notice">Mensaje Enviado</div>
+		  <div class="tituloforma">Contacto</div>
+
+		  <label for="name"><span class="required">*</span>Nombre</label>
+		  <%= text_field_tag :nombre,nil, required: true, pattern: "|^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚüÜ]*$|", title: "Ingrese solo caracteres permitidos" %>  
+
+		  <label for="email"><span class="required">*</span>Correo electrónico</label> 
+		  <%= text_field_tag :email,nil, required: true, pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+([\.][a-zA-Z0-9-]{2,3}){1,2}$"  %>  
+
+		  <label for="empresa">Compañia / Empresa</label> 
+		  <%= text_field_tag :empresa,nil, pattern: "|^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚüÜ]*$|", title: "Ingrese solo caracteres permitidos", title: "Ingrese un formato válido ejemplo@tupagina.com" %> 
+
+		  <label for="telefono">Teléfono</label> 
+		  <%= text_field_tag :telefono,nil, pattern: "[0-9]*", title: "Ingrese solo números" %> 
+
+		  <label for="cp">Código Postal</label>      
+		  <%= text_field_tag :cp,nil, maxlength: "5", min: "0", pattern: "[0-9]{5}", title: "Ingrese un código postal valido." %> 
+
+		  <label for="pais">País</label> 
+		  <%= text_field_tag :pais,nil, pattern: "|^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚüÜ]*$|", title: "Ingrese solo caracteres permitidos" %>   
+
+		  <label for="comentarios">Comentarios</label> 
+		  <%= text_area_tag :comentarios,nil, required: true, pattern: "|^[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]*$|", title: "Ingrese solo caracteres permitidos" %>
+		  <div class="contenedor_botones">
+			<%= submit_tag "Enviar", id: "submit", class: 'boton' %>        
+		  <%#= submit_tag "MEDIDAS A COTIZAR", id: "cotizar", class: 'boton' %> </div>
+		  <div class="nota"><span class="required">*</span>Información obligatoria.</div>             
+		<% end %> 
+	</div>
+</div>
+
+

@@ -410,6 +410,12 @@ a.olvidePass:hover { /*Mause sobre el link*/
 	   	 position: relative;
 	}
 
+	.contact-form2 { 
+		width: 470px;
+		height: 400px;
+	   	 margin:0 auto 0 auto;
+	}		
+
 		.notice{
 			position:absolute;
 			left:0px;
