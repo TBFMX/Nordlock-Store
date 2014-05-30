@@ -117,12 +117,20 @@ Rails.application.routes.draw do
     post "contacto/index" => :sender
   end
 
-
-
   resources :nosotros
   resources :productos
   resources :catalogo
   resources :review_cart
+
+  controller :review_cart do
+    post "review_cart/index" => :sender
+    post "review_cart/sender" => :sender
+    post "review_cart" => :sender
+  end 
+
+  controller :cart do
+    get "cart/destroy" => :destroy
+  end
 
   get '*unmatched_route', :to => 'application#raise_not_found2'
 

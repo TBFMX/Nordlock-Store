@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   before_action :set_locale
   include CurrentCart
+  include CurrentUser
   before_action :set_cart
   protect_from_forgery with: :exception
   before_action :authorize
@@ -84,15 +85,7 @@ class ApplicationController < ActionController::Base
   end
 
 
-  def get_user
-    @user = User.find_by(id: session[:user_id])
-    return @user
-  end
   
-  def get_mail
-    @user = User.find_by(id: session[:user_id])
-    return @user.mail
-  end    
 
   
 
