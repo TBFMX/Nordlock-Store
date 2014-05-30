@@ -8,10 +8,10 @@
   <%= text_field_tag :nombre,nil, required: true, pattern: "|^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚüÜ]*$|", title: "Ingrese solo caracteres permitidos" %>  
 
   <label for="email"><span class="required">*</span>Correo electrónico</label> 
-  <%= text_field_tag :email,nil, required: true, pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+([\.][a-zA-Z0-9-]{2,3}){1,2}$"  %>  
+  <%= text_field_tag :email,nil, required: true, pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+([\.][a-zA-Z0-9-]{2,3}){1,2}$", title: "Ingrese un formato válido ejemplo@tupagina.com"  %>  
 
   <label for="empresa">Compañia / Empresa</label> 
-  <%= text_field_tag :empresa,nil, pattern: "|^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚüÜ]*$|", title: "Ingrese solo caracteres permitidos", title: "Ingrese un formato válido ejemplo@tupagina.com" %> 
+  <%= text_field_tag :empresa,nil, pattern: "|^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚüÜ]*$|", title: "Ingrese solo caracteres permitidos", title: "Ingrese un formato válido" %> 
 
   <label for="telefono">Teléfono</label> 
   <%= text_field_tag :telefono,nil, pattern: "[0-9]*", title: "Ingrese solo números" %> 

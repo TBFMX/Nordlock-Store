@@ -68,7 +68,7 @@ body{
 	.buscador{							/* Contenedor de todo el buscador*/
 		float: right;
 		width: 480px;
-		height: 40px;
+		height: 50px;
 		text-align:right;
 	}
 
@@ -87,10 +87,7 @@ body{
 		.buscador .texto:focus{ 
 		   background-color: #E5E6E7;  
 		} 
-	 
-		.boton_busqueda{
-
-		}
+	 			
 
 	.contenedor_menu_banner{					/* Contenedor del menu*/
 		float: right;
