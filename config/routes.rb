@@ -103,7 +103,7 @@ Rails.application.routes.draw do
     post 'new_cambiar_password' => :new_cambiar_password
   end 
   
-  get 'contacto/index'
+  #get 'contacto', :to => 'contacto#index'
 
   get 'contacto/sender'
 
@@ -111,7 +111,9 @@ Rails.application.routes.draw do
 
   get 'contacto/success'
 
+  resources :contacto
   controller :contacto do 
+ 
     post "contacto/index" => :sender
   end
 
