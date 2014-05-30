@@ -1,4 +1,6 @@
 class Mailer < ActionMailer::Base
+  #before_action :get_user
+  #before_action :set_cart
   default from: "from@example.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -49,10 +51,15 @@ class Mailer < ActionMailer::Base
     mail(:to => "hugo@tbf.mx", :subject => "Nuevo Mensaje de Contacto NORD-LOCK", :from => "Arturito", :reply_to =>"arturito@tbf.mx")
   end
 
-  def cotizacion(mail,cart)
-    @user = get_user
-    usermail = get_mail
+  def cotizacion(mail,cart,user)
+    @cart = cart
+    @user = user
+    puts "-----------------------------------------------------------"
+    puts @user.inspect
+    puts "-----------------------------------------------------------"
+    usermail = user.email
     mail(:to => mail, :subject => "Nuevo pedido", :from => "Arturito", :reply_to =>usermail)
+   
   end  
 
   

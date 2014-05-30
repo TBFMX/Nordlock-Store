@@ -1,6 +1,6 @@
-<% @user.each do |user| %>
-	<p>el usuario <%= user.username %> realizo el siguiente pedido:</p>
-<% end %>
+<%# @user.each do |user| %>
+	<p>el usuario <%= @user.username %> realizo el siguiente pedido:</p>
+<%# end %>
 
 	<table class="tabla_formato" width="900" border="0" cellpadding="0" cellspacing="0">
       <tr class="tabla_encabezado_azul">
@@ -17,7 +17,7 @@
          <td></td>
       </tr>
       <tbody>
-        <% cart.line_items.each do |line_item| %>    
+        <% @cart.line_items.each do |line_item| %>    
             <tr class="tabla_contenido">
               <td><%= line_item.product.washer_size %></td>
               <td><%= line_item.product.bolt_size_metric %></td>
