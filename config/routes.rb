@@ -117,6 +117,8 @@ Rails.application.routes.draw do
     post "contacto/index" => :sender
   end
 
+
+
   resources :nosotros
   resources :productos
   resources :catalogo
