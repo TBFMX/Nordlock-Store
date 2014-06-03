@@ -3,6 +3,7 @@ class CatalogoController < ApplicationController
 	before_action :set_cart
   def index
   	@products = Product.all
+  	@category = params[:category]
   end
   def pedido
   	

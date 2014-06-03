@@ -1,63 +1,31 @@
-<div class="contenido_productos">
-	<div class="izquierda">
-		<div class="titulo">Arandelas Delta Protekt &reg;</div>	
-		<hr>			
-		<div class="descripcion">
-			<p><strong>Aplicaciones industriales:</strong></p>
-			<p>Contstucción, deportes, juegos mecánicos, agricultura.</p>
-		</div>	
-	</div>				
-	<div class="derecha">
-		<p><strong>Restricciones:</strong></p>
-		    <ul>
-				<li>Dureza no mayor a 461HV1 ó 46 Rockwell</li>
-				<li>Grado de tornillo hasta 12.9</li>
-				<li>Rango de temperatura: -20°C a 200°C</li>								
-			</ul>
-	</div>								
-</div>
-
-	<div class="centrar"><%= button_to 'REALIZAR PEDIDO', "/review_cart" , method: :get, class: "boton_pedido" %></div>	
-    
-    <div class="centrar">
-      <table class="tabla_formato" width="900" border="0" cellpadding="0" cellspacing="0">
-      <tr class="tabla_encabezado_azul">
-        <td>Medida de <br /> arandela</td>
-        <td>Medida [mm]</td>
-        <td>Medida [inch]</td>
-        <td>Diametro <br />interno</td>
-        <td>Diametro <br />externo</td>
-        <td>Grosor T</td>
-        <td>Piezas x <br /> paquete</td>
-        <td>Peso</td>
-        <td>no. Art</td>        
-        <td class="tabla_encabezado_griss">Cantidad por pares</td>
-         <td></td>
-      </tr>
-      <tbody>
-        <% @products.each do |product| %>
-          
-            <tr class="tabla_contenido">
-              <td><%= product.washer_size %></td>
-              <td><%= product.bolt_size_metric %></td>
-              <td><%= product.bolt_size_unc %></td>
-              <td><%= product.diameter_inside %></td>
-              <td><%= product.diameter_outside %></td>
-              <td><%= product.thickness_T %></td>
-              <td><%= product.min_package %></td>
-              <td><%= product.weight %></td>
-              <td><%= product.art_no %></td>
-              <%= form_tag(line_items_path , remote: true) do %>
-              <%= hidden_field_tag "product_id", "#{product.id}"%>
-              <td><%= number_field_tag "quantity" %>
-              <%= submit_tag 'Agregar' %></td>
-              <% end %>
-            </tr>
-          
-        <% end %>  
-          
-        </tbody>
-    </table>
-    </div> 
-
-	<div class="centrar"><%= button_to 'REALIZAR PEDIDO', "/review_cart" , method: :get, class: "boton_pedido" %>	</div>
+  <div class="descripcion_catalogo">
+    <h1>Productos</h1>
+    <hr>
+    <p>La tecnología de bloqueo por cuña Nord-Lock asegura las uniones atornilladas por tensión en vez de por fricción. El sistema se compone de un par de arandelas que tienen unas levas en la cara interior y unos dientes radiables en la cara exterior. <br> Los productos de bloqueo por cuña Nord-Lock bloquean positivamente la fijación de una unión sometida a vibraciones o cargas dinámicas extremas. Descubre que es NORD-LOCK &reg; <a href="/nosotros#productos">aquí</a></p>  
+  </div>  
+  <div class="catalogo">
+      <div class="producto">
+        <div class="nombre">
+          <% @categoria = "arandela_protekt" %>
+          <%=  link_to 'ARANDELA DELTA PROTEKT', catalogo_index_path(:category =>@categoria), class: "azul" %></div>        
+        <div class="imagen"><img src="/images/productos/productos-deltaprotekt.png"></div>
+        <p><strong>Ideal para:</strong> Apicaciones generales de acero.</p>
+      </div>
+      <div class="producto">
+        <div class="nombre">
+          <% @categoria = "arandela_316L" %>
+          <%=  link_to 'ARANDELA DE ACERO INOXIDABlE 316L', catalogo_index_path(:category =>@categoria), class: "azul" %></div>
+        <div class="imagen"><img src="/images/productos/productos-316l.png"></div>
+        <p><strong>Ideal para:</strong> Aplicaciones generales de acero inoxidable en entornos libres de cloro 7/o ácidos.</p>
+      </div>
+      <div class="producto">
+        <div class="nombre"><% @categoria = "arandela_254SMO" %><%=  link_to 'ARANDELA DE ACERO INOXIDABlE 254 SMO', catalogo_index_path(:category =>@categoria), class: "azul" %></div>        
+        <div class="imagen"><img src="/images/productos/productos-254smo.png"></div>
+        <p><strong>Ideal para:</strong> Aplicaciones en agua salada, bombas, cloruros, intercambiadores de calor, centrales nucleares, plantas desalinizadoras, maquinaria para procesar alimentos y equipos médicos.</p>
+      </div>
+      <div class="producto">
+        <div class="nombre"><% @categoria = "arandela_especiales" %><%=  link_to 'ARANDELAS ESPECIALES', catalogo_index_path(:category =>@categoria), class: "azul" %><br /><span class="nombre_chico">*Únicamente bajo pedido</span></div>
+        <div class="imagen"><img src="/images/productos/productos-especiales.png"></div>
+        <p><strong>Ideal para:</strong> Entornos ácidos, industria química y de propcesos, evaporadores, maquinaria en alta mar. Aplicaciones con altas temperaturas, turbinas de gas, incineradors, turbocompresores.</p>
+      </div>                  
+  </div>

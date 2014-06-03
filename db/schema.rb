@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140528150047) do
+ActiveRecord::Schema.define(version: 20140602210718) do
 
   create_table "addresses", force: true do |t|
     t.string   "street"
@@ -110,6 +110,7 @@ ActiveRecord::Schema.define(version: 20140528150047) do
     t.integer  "min_package"
     t.decimal  "weight"
     t.integer  "art_no"
+    t.string   "category"
   end
 
   create_table "rols", force: true do |t|
