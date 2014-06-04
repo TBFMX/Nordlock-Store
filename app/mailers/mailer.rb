@@ -1,7 +1,7 @@
 class Mailer < ActionMailer::Base
   #before_action :get_user
   #before_action :set_cart
-  default from: "from@example.com"
+  default from: "Arturito"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:

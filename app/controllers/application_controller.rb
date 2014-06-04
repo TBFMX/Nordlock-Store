@@ -62,6 +62,10 @@ class ApplicationController < ActionController::Base
     rescue ActiveRecord::RecordNotFound    
       # handle not found error
       logger.error "no se encontro el registro que se solicito"
+      puts "-------------------------------------------------------------"
+      puts "no se encontro el Record"
+      puts variable.inspect
+      puts "-------------------------------------------------------------"
       return false
     rescue ActiveRecord::ActiveRecordError
       # handle other ActiveRecord errors
@@ -69,7 +73,12 @@ class ApplicationController < ActionController::Base
           rescue # StandardError
       # handle most other errors
     rescue Exception
-      # handle everything else   
+      # handle everything else 
+      puts "-------------------------------------------------------------".
+      puts "ocurrio una excepcion"
+      puts variable.inspect
+      puts "-------------------------------------------------------------"
+
     end
   end
   def server_error(exception)

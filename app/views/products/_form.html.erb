@@ -56,6 +56,12 @@
     <%= f.label :art_no %><br>
     <%= f.text_field :art_no %>
   </div>
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.select(:category , options_for_select([["arandela_protekt","arandela_protekt"],["arandela_316L","arandela_316L"],["arandela_especiales","arandela_especiales"],["arandela_254SMO","arandela_254SMO"]],:category)) %>
+  </div> 
+</br>
+</br>
 
   <div class="actions">
     <%= f.submit %>

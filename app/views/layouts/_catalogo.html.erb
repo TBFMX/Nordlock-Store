@@ -1,5 +1,6 @@
 <% case @category %>
 <% when "arandela_protekt"%>
+  
     <div id="arandela_protekt" class="contenido_productos">
       <div class="izquierda">
         <div class="titulo">Arandelas Delta Protekt &reg;</div> 
@@ -54,6 +55,24 @@
 <% else %>
     <p> no se encontró la categoría.</p>
 <% end %>
+<% @cat = @category %>
+  <%= form_tag('index',:method => :get) do |product| %>
+  <p>diametro interior</p>
+    <%= select("product", "diameter_inside", @products.order("diameter_inside").collect {|p| [ p.diameter_inside, p.diameter_inside ] }.uniq, {include_blank: 'cualquiera'}) %>
+  <p>diametro exterior</p>  
+    <%= select("product", "diameter_outside", @products.order("diameter_outside").collect {|p| [ p.diameter_outside, p.diameter_outside ] }.uniq, {include_blank: 'cualquiera'}) %>
+
+  <p>tamaño metrico</p>  
+    <%= select("product", "bolt_size_metric", @products.order("bolt_size_metric").collect {|p| [ p.bolt_size_metric, p.bolt_size_metric ] }.uniq, {include_blank: 'cualquiera'}) %>
+  <p>tamaño UNC</p>  
+    <%= select("product", "bolt_size_unc", @products.order("bolt_size_unc").collect {|p| [ p.bolt_size_unc, p.bolt_size_unc ] }.uniq, {include_blank: 'cualquiera'}) %>
+  <p>grozor</p>
+    <%= select("product", "thickness_T", @products.order("thickness_T").collect {|p| [ p.thickness_T, p.thickness_T ] }.uniq, {include_blank: 'cualquiera'}) %>
+    <%= hidden_field_tag "category", @cat %>
+     <%= submit_tag 'Filtrar' %></td>
+  <% end %>
+
+
 
 	<div class="centrar"><%= button_to 'REALIZAR PEDIDO', "/review_cart" , method: :get, class: "boton_pedido" %></div>	
     
@@ -73,7 +92,8 @@
          <td></td>
       </tr>
       <tbody>
-        <% @products.each do |product| %>
+        
+          <% @products.each do |product| %>
           
             <tr class="tabla_contenido">
               <td><%= product.washer_size %></td>
@@ -91,9 +111,8 @@
               <%= submit_tag 'Agregar' %></td>
               <% end %>
             </tr>
-          
-        <% end %>  
-          
+          <% end %>  
+         
         </tbody>
     </table>
     </div> 
