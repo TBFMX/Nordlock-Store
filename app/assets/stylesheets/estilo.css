@@ -88,28 +88,94 @@ body{
 		   background-color: #E5E6E7;  
 		} 
 	 			
+/* ----Menu desplegable --------*/
+	.menu {
+		 width: auto;
+		 font-family:Arial, Helvetica, sans-serif;
+		 font-size:13px;
+		 font-weight:bold; 
+	 }
 
-	.contenedor_menu_banner{					/* Contenedor del menu*/
-		float: right;
-		display:table;
-		width: 480px;
-		height: 30px;
+	 .menu ul {
+		 float:left;
+		 height:0px;
+		 list-style:none;
+		 margin:0;
+		 padding:0;
+	 }
+
+	 .menu li{
+		 float: inherit;
+		 padding:0px;
+		 width:116px;
+		 height: 26px;
+		 border:2px solid;
+		 border-color: #f2f2f2;
+		 background-color:#66DDFF;
+	 }
+
+	 .menu li a{
+		 color: #FFFFFF; /* Color de la fuente */
+		 display:block;
+		 margin:0px;
+		 padding-top:5px;
+		 height: 26px;
+		 text-align:center;
+		 text-decoration:none;
+	  }
+
+	 .menu li a:hover, .menu ul li:hover a {
+		 background: #666666; /* Color de las pestañas al pasar el cursor va en info y mod */
+		 color:#FFFFFF; /* Color del texto al pasar el cursor */
+		 height:21px;
+		 text-decoration:none;
+	 }
+
+	 .menu li ul {
+		 float:inherit;
+		 background:#002569; /* Color de fondo del submenú */
+		 display:none;
+		 height:auto;
+		 padding:0px;
+		 margin:0px;
+		 position:absolute;
+		 width: 300px; /* Ancho del submenú */
+		 z-index:100;
+		 border-top:1px solid #f2f2f2;  /*Borde superior del submenú */
+		 text-align:right;
+	 }
+	   
+	 .menu li:hover ul{
+	 	display:block;
+	 }
+	 
+	 .menu li li {
+		 display:block;
+		 float:none;
+		 margin:0px;
+		 padding:0px;
+		 width: auto;
+		 }
+	 
+	 .menu li:hover li a {
+		 background:none;
+	 }
+	 
+	 .menu li ul a {
+		 display:block;
+		 height:55px; /*alto entre cada punto de submenu*/
+		 font-size:13px;
+		 margin:0px;
+		 text-align:left;
+		 margin-left:10px;
+		 background-color:#666666;
+	 }
+	 
+	 .menu li ul a:hover, .menu li ul li:hover a{
+		 background:#666666; /* Color de las subpestañas al pasar el cursor */
+		 color:#FFFFFF;
+		 text-decoration:none;
 	}
-
-		.menu_banner{
-			display:table-cell;
-			vertical-align: middle;
-			width: 110px;
-			height: 26px;
-			border: 2px solid;	
-			background-color: #66DDFF;	
-			border-color: #F2F2F2;		
-		}
-
-			.menu_banner:hover{
-				background: #A6B3B3;
-			}
-
 /*--Footer-----------------------------------------------------*/
 
 .derechos{ 
@@ -172,6 +238,7 @@ a.blanco:hover { /*Mause sobre el link*/
 
 a.azul{ /* Link no visitado*/
 	text-decoration:none; 
+	color:#666666;
 } 				
 
 a.azul:link { /* Link no visitado*/
@@ -191,6 +258,31 @@ a.azul:hover { /*Mause sobre el link*/
 	text-decoration:none; 
 	color: #FFFFFF;	
 	} 
+
+/*----------*/
+
+a.gris{ /* Link no visitado*/
+	text-decoration:none; 
+	color:#A6B3B3;
+} 				
+
+a.gris:link { /* Link no visitado*/
+	text-decoration:none; 
+	} 
+
+a.gris:visited { /*Link visitado*/
+	text-decoration:none; 
+	color: #666666;	
+	} 
+
+a.gris:active {/*Link activo*/
+	text-decoration:none; 
+	} 
+
+a.gris:hover { /*Mause sobre el link*/
+	text-decoration:none; 
+	color: #666666;	
+	} 	
 
 
 .slideshow{

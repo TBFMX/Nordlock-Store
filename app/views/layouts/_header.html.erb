@@ -17,11 +17,22 @@
 </script>
 <gcse:search></gcse:search> -->
 	</form>
-		<div class="contenedor_menu_banner">
-			<div class="menu_banner"><%=  link_to 'NOSOTROS', "/nosotros",class: 'blanco' %></div>		
-			<div class="menu_banner"><%=  link_to 'PRODUCTOS', "/productos",class: 'blanco'  %></div>	
-			<div class="menu_banner"><a href="#" class="blanco">CLIENTES</a></div>		
-			<div class="menu_banner"><%=  link_to 'CONTACTO', "/contacto" ,class: 'blanco'  %></div>	</div>									
-		</div>	
+		    <div class='menu'>
+    <ul>
+      <li><%=  link_to 'NOSOTROS', "/nosotros" %></li>
+      <li><%=  link_to 'PRODUCTOS', "/productos" %> 
+        <ul>
+          <li><% @categoria = "arandela_protekt" %>
+              <%=  link_to 'ARANDELA DELTA PROTEKT', catalogo_index_path(:category =>@categoria), class: "azul" %></li>
+          <li><% @categoria = "arandela_316L" %>
+              <%=  link_to 'ARANDELA DE ACERO INOXIDABlE 316L', catalogo_index_path(:category =>@categoria), class: "azul" %></li>
+          <li><% @categoria = "arandela_254SMO" %><%=  link_to 'ARANDELA DE ACERO INOXIDABlE 254 SMO', catalogo_index_path(:category =>@categoria), class: "azul" %></li>
+          <li><% @categoria = "arandela_especiales" %><%=  link_to 'ARANDELAS ESPECIALES', catalogo_index_path(:category =>@categoria), class: "azul" %></li>
+        </ul> </li>
+      <li><a href="#">CLIENTES</a></li>
+      <li><%=  link_to 'CONTACTO', "/contacto" %></li>
+    </ul>
+    </div > 
+
 	</div>
 </html>
