@@ -50,3 +50,5 @@ group :production do
 end
 
 gem 'exception_notification'
+gem "breadcrumbs_on_rails"
+

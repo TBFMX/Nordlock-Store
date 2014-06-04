@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
   def new
   end
-
+ #creamos un nuevo token
   def create
   	user = User.find_by(username: params[:username])
   	if user and user.authenticate(params[:password])
