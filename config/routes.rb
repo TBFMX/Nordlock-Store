@@ -57,7 +57,7 @@ Rails.application.routes.draw do
 
   resources :module1s
 
-  get 'password_resets/new'
+  #get 'password_resets/new'
 
   get 'admin' => 'admin#index'
 

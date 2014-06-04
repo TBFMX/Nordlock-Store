@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
 
       #variables de rol
       rol =Rol.find_by(id: user.rol_id)
+    unless rol.nil?
       session[:mod0] =rol.admin
       session[:mod1] =rol.module_1
       session[:mod2] =rol.module_2
@@ -21,6 +22,7 @@ class SessionsController < ApplicationController
       session[:mod4] =rol.module_4
       session[:mod5] =rol.module_5
       #termina variables de rol
+    end
 
   		redirect_to root_url
   	else
