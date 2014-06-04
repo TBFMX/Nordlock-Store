@@ -48,7 +48,7 @@ class Mailer < ActionMailer::Base
     @greeting = "Hi"
     @datos = datos
 
-    mail(:to => "hugo@tbf.mx", :subject => "Nuevo Mensaje de Contacto NORD-LOCK", :from => "Arturito", :reply_to =>"arturito@tbf.mx")
+    mail(:to => "miguel@tbf.mx", :subject => "Nuevo Mensaje de Contacto NORD-LOCK", :from => "Arturito", :reply_to =>"arturito@tbf.mx")
   end
 
   def cotizacion(mail,cart,user)
