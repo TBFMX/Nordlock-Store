@@ -15,3 +15,74 @@
  *= require_tree .
  */
 
+
+/*------------------------------------------------breadcrumb----------------*/	
+
+.breadcrumb{
+	width: 960px;
+	height: 14px;
+	font-size: 13px;
+	font-weight: 300;
+	margin:0 auto 0 auto;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	text-align: left;	
+	color: #a6b3b3;
+}
+
+.breadcrumb a{
+	text-decoration: none;
+	font-weight:bold;
+	color: #a6b3b3;
+}			
+
+.breadcrumb a:link { /* Link no visitado*/
+	text-decoration:none; 
+	} 
+
+.breadcrumb a:visited { /*Link visitado*/
+	text-decoration:none; 
+	} 
+
+.breadcrumb a:active {/*Link activo*/
+	text-decoration:none; 
+	background:#A6B3B3;
+	} 
+
+.breadcrumb a:hover { /*Mause sobre el link*/
+	text-decoration:underline; 
+	}  
+
+/*-------------------------------------------error_explanation------------------*/
+
+.contenido #error_explanation{
+	position:inherit;
+	left:100px;
+	top:150px;
+}
+
+#notice{
+	font-size:13px;
+	color:#666666;
+}
+
+#error_explanation{
+	padding-rigth: 20px;
+	height: 150px;
+	width: 400px;
+}
+
+#error_explanation h2{
+	font-size: 14px;
+	color: #666666;
+}
+
+#error_explanation li{
+	text-align: left;
+	font-size: 14px;
+	color: #666666;
+}
+
+#field_with_errors{
+	
+}

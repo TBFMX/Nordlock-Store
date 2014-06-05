@@ -1,5 +1,5 @@
 @charset "utf-8";
-/*@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400);*/
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400);
 
 /*--Cuerpo-----------------------------------------------------*/
 
@@ -24,6 +24,7 @@ body{
 
 .barra_login a{
 	text-decoration: none;
+	font-weight:bold;
 	color: #a6b3b3;
 }			
 
@@ -202,6 +203,7 @@ body{
 		color: #A6B3B3;
 	}
 
+
 /*--contenido_generico-----------------------------------------------------*/
 
 .contenido{
@@ -263,6 +265,7 @@ a.azul:hover { /*Mause sobre el link*/
 
 a.gris{ /* Link no visitado*/
 	text-decoration:none; 
+	font-weight: bold;
 	color:#A6B3B3;
 } 				
 
@@ -298,12 +301,13 @@ a.gris:hover { /*Mause sobre el link*/
 
 .contenido .login{
 	width: 400px;
-	height: 250px;
+	height: auto;
 	border-radius: 20px;
 	margin:0 auto 0 auto;
 	border: 3px solid;
 	border-color: #6699B3;
 	text-align: center;
+	z-index:-1;
 }
 
 .contenido .login .cintilla{
@@ -329,6 +333,10 @@ a.gris:hover { /*Mause sobre el link*/
 }
 
 .login #username, 
+.login #user_username, 
+.login #user_password, 
+.login #user_password_confirmation, 
+.login #user_email, 
 .login #password{ 
 	width: 380px;
 	background: #fff;
@@ -934,4 +942,4 @@ a.olvidePass:hover { /*Mause sobre el link*/
 			    from { opacity: 1; }
 			    50% { opacity: 1; }
 			    to   { opacity: 0; }
-			}​ 
+			}​

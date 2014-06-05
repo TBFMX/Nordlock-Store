@@ -1,3 +1,28 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1{
+ color: #666666;
+ text-align: center;
+}
+
+.boton_enviar { 	
+	font-size: 13px;
+	font-weight: 400;
+	margin-top: 5px;
+	width: 145px;
+	height: 23px;
+	border: 2px solid;	
+	/*border-radius: 5px;*/
+	color: #FFFFFF;	
+	background-color: #66DDFF;	
+	border-color: #66DDFF;
+	margin:0 auto 0 auto;
+}
+
+.boton_enviar:hover { 	
+	background-color: #666666;
+	border-color: #666666;
+	color: #FFFFFF;
+}

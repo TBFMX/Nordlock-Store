@@ -11,59 +11,61 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :washer_size %><br>
-    <%= f.text_field :washer_size %>
-  </div>
-  <div class="field">
-    <%= f.label :bolt_size_metric %><br>
-    <%= f.text_field :bolt_size_metric %>
-  </div>
-  <div class="field">
-    <%= f.label :bolt_size_unc %><br>
-    <%= f.text_field :bolt_size_unc %>
-  </div>
-  <div class="field">
-    <%= f.label :diameter_inside %><br>
-    <%= f.text_field :diameter_inside %>
-  </div>
-  <div class="field">
-    <%= f.label :diameter_outside %><br>
-    <%= f.text_field :diameter_outside %>
-  </div>      
-  <div class="field">
-    <%= f.label :thickness_T %><br>
-    <%= f.text_field :thickness_T %>
-  </div>
-  <div class="field">
-    <%= f.label :min_package %><br>
-    <%= f.text_field :min_package %>
-  </div>
-  <div class="field">
-    <%= f.label :weight %><br>
-    <%= f.text_field :weight %>
-  </div>
-  <div class="field">
-    <%= f.label :art_no %><br>
-    <%= f.text_field :art_no %>
-  </div>
-  <div class="field">
-    <%= f.label :category %><br>
-    <%= f.select(:category , options_for_select([["arandela_protekt","arandela_protekt"],["arandela_316L","arandela_316L"],["arandela_especiales","arandela_especiales"],["arandela_254SMO","arandela_254SMO"]],:category)) %>
+  <table class="tabla_formato" width="600" border="0" cellpadding="0" cellspacing="0" align="center">
+    <tr>
+      <td class="tabla_encabezado_azul"><%= f.label :category, "Categoria:" %></td>
+      <td><%= f.select(:category , options_for_select([["arandela_protekt","arandela_protekt"],["arandela_316L","arandela_316L"],["arandela_especiales","arandela_especiales"],["arandela_254SMO","arandela_254SMO"]],:category)) %></td>
+    </tr>
+    <tr>
+      <td class="tabla_encabezado_azul"><%= f.label :title, "Titulo" %></td>
+      <td><%= f.text_field :title, size: "50" %></td>
+    </tr>
+    <tr>
+      <td class="tabla_encabezado_azul"><%= f.label :description, "Descripción" %></td>
+      <td><%= f.text_area :description, style: "width: 412px; height: 47px;"  %></td>
+    </tr>
+    <tr>
+      <td class="tabla_encabezado_azul"><%= f.label :washer_size, "Medida" %></td>
+      <td><%= f.text_field :washer_size, size: "50"  %></td>
+    </tr>
+    <tr>
+      <td class="tabla_encabezado_azul"><%= f.label :bolt_size_metric, "Medida [mm]" %></td>
+      <td><%= f.text_field :bolt_size_metric, size: "50"  %></td>
+    </tr>
+    <tr>
+      <td class="tabla_encabezado_azul"><%= f.label :bolt_size_unc, "Medida [inch]" %></td>
+      <td><%= f.text_field :bolt_size_unc, size: "50"  %></td>
+    </tr>
+    <tr>
+      <td class="tabla_encabezado_azul"><%= f.label :diameter_inside, "Diametro Interior" %></td>
+      <td><%= f.text_field :diameter_inside, size: "50"  %></td></tr>
+    <tr>
+      <td class="tabla_encabezado_azul"><%= f.label :diameter_outside, "Diametro Exterior" %></td>
+      <td><%= f.text_field :diameter_outside, size: "50"  %></td>
+    </tr>
+    <tr>
+      <td class="tabla_encabezado_azul"><%= f.label :thickness_T, "Grosor T" %></td>
+      <td><%= f.text_field :thickness_T, size: "50"  %></td>
+    </tr>
+    <tr>
+      <td class="tabla_encabezado_azul"><%= f.label :min_package, "Piezas por paquete" %></td>
+      <td><%= f.text_field :min_package, size: "50"  %></td>
+    </tr>
+    <tr>
+      <td class="tabla_encabezado_azul"><%= f.label :weight, "Peso" %></td>
+      <td><%= f.text_field :weight, size: "50"  %></td>
+    </tr>
+    <tr>
+      <td class="tabla_encabezado_azul"><%= f.label :art_no, "No. Artículo" %></td>
+      <td><%= f.text_field :art_no , size: "50" %></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><div class="actions"><%= f.submit "Enviar", class: "boton_enviar" %></div><%= link_to 'Regresar', products_path, class: "gris" %></td>
+    </tr>
+  </table>
   </div> 
 </br>
 </br>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  
 <% end %>

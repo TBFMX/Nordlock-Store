@@ -1,17 +1,17 @@
 <div class="contenido">
 	<div class="login">	
-<% if flash[:alert] %>
+	<div class="cintilla">Inicio de sesión</div>
+<% if flash[:alert] %><br />
 	<div id="notice"><%= flash[:alert] %></div>
 <% end %>
 <%= form_tag do %>
-	<div class="cintilla">Inicio de sesión</div>
-	<br>
+	<br><br>
 	<%= label_tag :username, 'Usuario:' %>
 	<%= text_field_tag :username, params[:username] %>
 	<br>
 	<%= label_tag :password, 'Password:' %>
 	<%= password_field_tag :password, params[:password] %>
-	<br>
+	<br><br>
 	<%= submit_tag "Login", class: 'boton' %>
 	<br>
 <% end %>
