@@ -1,6 +1,6 @@
 class AddressesController < ApplicationController
   before_action :set_address, only: [:show, :edit, :update, :destroy]
-
+before_action :autorizar
   # GET /addresses
   # GET /addresses.json
   def index
@@ -65,6 +65,11 @@ class AddressesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_address
       @address = Address.find(params[:id])
+    end
+        def autorizar
+        unless session[:mod0] == true
+          redirect_to "/"
+        end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

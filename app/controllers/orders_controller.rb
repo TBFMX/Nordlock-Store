@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :autorizar
 
   # GET /orders
   # GET /orders.json
@@ -65,6 +66,16 @@ class OrdersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_order
       @order = Order.find(params[:id])
+    end
+    def autorizar
+        unless session[:mod0] == true
+          redirect_to "/"
+        end
+    end
+    def autorizar
+        unless session[:mod0] == true
+          redirect_to "/"
+        end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

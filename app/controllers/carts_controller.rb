@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
+  before_action :autorizar
   # GET /carts
   # GET /carts.json
   def index
@@ -69,7 +70,11 @@ class CartsController < ApplicationController
     def set_cart
       @cart = Cart.find(params[:id])
     end
-
+    def autorizar
+        unless session[:mod0] == true
+          redirect_to "/"
+        end
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def cart_params
       params[:cart]

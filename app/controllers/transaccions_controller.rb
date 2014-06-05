@@ -1,5 +1,6 @@
 class TransaccionsController < ApplicationController
   before_action :set_transaccion, only: [:show, :edit, :update, :destroy]
+  before_action :autorizar
 
   # GET /transaccions
   # GET /transaccions.json
@@ -67,6 +68,11 @@ class TransaccionsController < ApplicationController
       @transaccion = Transaccion.find(params[:id])
     end
 
+    def autorizar
+        unless session[:mod0] == true
+          redirect_to "/"
+        end
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def transaccion_params
       params.require(:transaccion).permit(:client_id, :order_id, :payed, :detail, :pay_method, :status, :authorization_code, :paydate, :gateway_id, :total)

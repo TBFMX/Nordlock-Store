@@ -3,6 +3,7 @@ class GatewayController < ApplicationController
   include PayPal::SDK::REST
   include CurrentCart
   before_action :set_cart
+  before_action :autorizar
   #before_action :validate_client
   
   
@@ -114,6 +115,11 @@ class GatewayController < ApplicationController
 
 	return paymentInfo
   end
+  def autorizar
+        unless session[:mod0] == true
+          redirect_to "/"
+        end
+    end
 
   def get_payment_details(pp_id)
   	# Fetch Payment

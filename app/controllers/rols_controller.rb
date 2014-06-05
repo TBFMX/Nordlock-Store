@@ -1,4 +1,5 @@
 class RolsController < ApplicationController
+  before_action :autorizar
   before_action :set_rol, only: [:show, :edit, :update, :destroy]
 
   # GET /rols
@@ -67,6 +68,11 @@ class RolsController < ApplicationController
       @rol = Rol.find(params[:id])
     end
 
+    def autorizar
+        unless session[:mod0] == true
+          redirect_to "/"
+        end
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def rol_params
       params.require(:rol).permit(:rol_name, :admin, :module_1, :module_2, :module_3, :module_4, :module_5)
