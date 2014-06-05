@@ -14,6 +14,7 @@
   <%= csrf_meta_tags %><!-- <label id="code.csrf"/> -->
   <%= render partial: "/layouts/login" %>
   <%= render partial: "/layouts/header" %>
+ <div class="contenedor"> <%= render_breadcrumbs :separator => ' / ' %></div>
 </head>
 <!-- END:head -->
 <!--<body class="<%= controller.controller_name %>">-->

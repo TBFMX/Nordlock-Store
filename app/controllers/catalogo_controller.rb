@@ -21,6 +21,21 @@ class CatalogoController < ApplicationController
       puts "-------------------------------------------------------------"
      end   
   	@category = params[:category]
+
+    add_breadcrumb I18n.t("breadcrumbs.productos"), :productos_path
+    case @category 
+      when "arandela_protekt"
+        add_breadcrumb I18n.t("breadcrumbs.delta"), "/catalogo/index?category=arandela_protekt"
+      when "arandela_316L" 
+        add_breadcrumb I18n.t("breadcrumbs.ino316"), "/catalogo/index?category=arandela_316L"
+      when "arandela_254SMO" 
+        add_breadcrumb I18n.t("breadcrumbs.ino254"), "/catalogo/index?category=arandela_254SMO"
+      when "arandela_especiales" 
+        add_breadcrumb I18n.t("breadcrumbs.especiales"), "/catalogo/index?category=arandela_especiales"
+      else 
+        redirect_to productos_path
+    end 
+
   end
   def pedido
   	

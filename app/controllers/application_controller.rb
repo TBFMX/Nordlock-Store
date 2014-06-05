@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
   before_action :set_cart
   protect_from_forgery with: :exception
   before_action :authorize
+
+  add_breadcrumb I18n.t("breadcrumbs.homepage"), :root_path
   
   unless Rails.application.config.consider_all_requests_local
     rescue_from Exception, :with => :render_error
