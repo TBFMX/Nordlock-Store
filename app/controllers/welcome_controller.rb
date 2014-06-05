@@ -47,7 +47,7 @@ class WelcomeController < ApplicationController
   def sender
     @datos = contacto_params
     Mailer.sended(@datos).deliver 
-    redirect_to root_url, notice: "Mensaje enviado"
+    redirect_to "/#contacto", notice: "Mensaje enviado"
   end  
 
   private
