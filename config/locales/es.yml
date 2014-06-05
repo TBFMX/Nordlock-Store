@@ -14,9 +14,10 @@ es:
   activerecord:
       attributes:
         user: 
-          username: 'nombre de usuario'
-          password: 'contraseña'
-          email: 'correo electronico'
+          username: 'Nombre De Usuario'
+          password: 'Contraseña'
+          email: 'Correo Electronico'
+          password_confirmation: 'Confirmacion De Contraseña'
  
   date:
     abbr_day_names:
