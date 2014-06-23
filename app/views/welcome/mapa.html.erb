@@ -1,0 +1,32 @@
+<div class="nivel0"></div>
+<div class="nivel1">
+	<div class="cuadro11"><%=  link_to 'Nord-Lock', root_url,class: "blanco" %></div>
+</div>
+<div class="linea1"><img src="/images/mapa01.png"></div>
+<div class="nivel2">
+	<div class="cuadro21"><%=  link_to 'Nosotros', "/nosotros",class: "blanco" %></div>
+	<div class="cuadro22"><%=  link_to 'Productos', "/productos",class: "blanco" %></div>
+	<div class="cuadro23"><a href"#" class="blanco">Clientes</a></div>
+	<div class="cuadro24"><%=  link_to 'Contacto', "/contacto",class: "blanco" %></div>	
+</div>
+<div class="linea2"><img src="/images/mapa02.png"></div>
+<div class="nivel3">
+	<div class="cuadro31"><%=  link_to 'Quienes somos?', "/nosotros#quienes",class: "blanco" %></div>	
+	<div class="cuadro32"><%=  link_to 'Qué es Nord-Lock?', "/nosotros#productos",class: "blanco" %></div>
+	<div class="cuadro33">
+		<% @categoria = "arandela_protekt" %><%=  link_to 'Arandela Delta Protekt', catalogo_index_path(:category =>@categoria),class: "blanco" %>
+	</div>	
+	<div class="cuadro34">
+		<% @categoria = "arandela_316L" %>
+		<%=  link_to 'Arandela de Acero inoxidable 316L', catalogo_index_path(:category =>@categoria),class: "blanco" %>
+	</div>	
+	<div class="cuadro35">
+		<% @categoria = "arandela_254SMO" %>
+		<%=  link_to 'Arandela de Acero inoxidable 254 SMO', catalogo_index_path(:category =>@categoria), class: "blanco" %>
+	</div>	
+	<div class="cuadro36">
+		<% @categoria = "arandela_especiales" %>
+		<%=  link_to 'Arandelas Especiales', catalogo_index_path(:category =>@categoria), class: "blanco" %>
+	</div>						
+</div>
+<div class="nivel0"></div>

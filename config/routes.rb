@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get 'nosotros/index'
 
+  get 'welcome/mapa'
+
   resources :orders
 
   resources :transaccions

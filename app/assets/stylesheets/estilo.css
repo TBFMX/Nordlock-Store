@@ -3,6 +3,8 @@
 
 /*--Cuerpo-----------------------------------------------------*/
 
+* { margin: 0; padding: 0; }
+
 body{
 	background-color: #F2F2F2;
 	font-family:Arial, Helvetica, sans-serif;
@@ -908,6 +910,55 @@ a.olvidePass:hover { /*Mause sobre el link*/
 		text-align: center;	
 	}
 
+/*--Mapa Sitio-----------------------------------------------------*/
+
+.nivel0{
+	width: 140px;
+	height: 520px;
+	float: left;
+	background-color: #FFFFFF;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.nivel1,.nivel2,.nivel3{
+	width: 200px;
+	height: 520px;
+	float: left;
+	background-color: #FFFFFF;	
+	padding-top: 20px;
+	padding-bottom: 20px;	
+}
+
+.linea1,.linea2{
+	width: 40px;
+	height: 520px;
+	float: left;	
+	background-color: #FFFFFF;	
+	padding-top: 20px;
+	padding-bottom: 20px;	
+}
+
+.cuadro11,.cuadro21,.cuadro22,.cuadro23,.cuadro24,.cuadro31,.cuadro32,.cuadro33,.cuadro34,.cuadro35,.cuadro36{
+	width: 198px;
+	height: 38px;
+	border-radius: 10px;
+	text-align: center;
+	border: 1px solid #FFFFFF;
+	background-color: #66DDFF;
+}
+
+.cuadro11{margin-top: 240px;}
+.cuadro21{margin-top: 30px;	}
+.cuadro22{margin-top: 170px;}
+.cuadro23{margin-top: 140px;}
+.cuadro24{margin-top: 20px;}
+.cuadro31{}
+.cuadro32{margin-top: 20px;	}
+.cuadro33{margin-top: 50px;	}
+.cuadro34{margin-top: 20px;	}
+.cuadro35{margin-top: 20px;	}
+.cuadro36{margin-top: 20px;	}
 
 /*-----------animaciones ----------*/
 			@keyframes fadein {

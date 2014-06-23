@@ -50,6 +50,9 @@ class WelcomeController < ApplicationController
     redirect_to "/#contacto", notice: "Mensaje enviado"
   end  
 
+  def mapa
+  end
+
   private
 
   def contacto_params
