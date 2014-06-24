@@ -9,18 +9,27 @@
     
     <div class="centrar">
       <table class="tabla_formato" width="900" border="0" cellpadding="0" cellspacing="0">
+      
+     <tr class="tabla_encabezado_azul">
+        <td rowspan="2">Medida de </br> arandela</td>
+        <td rowspan="2">Medida <br> p[mm]</td>
+        <td rowspan="2">Medida <br> p[inch]</td>
+        <td colspan="3">[MM]</td>
+        <td colspan="3">[UNC]</td>
+        <td rowspan="2">Piezas x <br /> paquete</td>
+        <td rowspan="2">Peso</td>
+        <td rowspan="2">no. Art</td>        
+        <td rowspan="2" class="tabla_encabezado_griss">Cantidad por pares</td>  
+         <td rowspan="2"></td>
+      </tr>
       <tr class="tabla_encabezado_azul">
-        <td>Medida de <br /> arandela</td>
-        <td>Medida [mm]</td>
-        <td>Medida [inch]</td>
-        <td>Diametro <br />interno</td>
-        <td>Diametro <br />externo</td>
+        <td>Diametro <br>interno</td>
+        <td>Diametro <br>externo</td>
         <td>Grosor T</td>
-        <td>Piezas x <br /> paquete</td>
-        <td>Peso</td>
-        <td>no. Art</td>        
-        <td class="tabla_encabezado_griss">Cantidad por pares</td>
-         <td></td>
+        <td>Diametro <br>interno</td>
+        <td>Diametro <br>externo</td>
+        <td>Grosor T</td>        
+        <td>
       </tr>
       <tbody>
         <% @cart.line_items.each do |line_item| %>    
@@ -28,15 +37,18 @@
               <td><%= line_item.product.washer_size %></td>
               <td><%= line_item.product.bolt_size_metric %></td>
               <td><%= line_item.product.bolt_size_unc %></td>
-              <td><%= line_item.product.diameter_inside %></td>
-              <td><%= line_item.product.diameter_outside %></td>
+              <td><%= (line_item.product.diameter_inside).round(3) %></td>
+              <td><%= (line_item.product.diameter_outside).round(3) %></td>
               <td><%= line_item.product.thickness_T %></td>
+              <td><%= line_item.product.diameter_inside_unc %></td>
+              <td><%= line_item.product.diameter_outside_unc %></td>
+              <td><%= line_item.product.thickness_T_unc %></td>              
               <td><%= line_item.product.min_package %></td>
-              <td><%= line_item.product.weight %></td>
+              <td><%= (line_item.product.weight).round(2) %></td>
               <td><%= line_item.product.art_no %></td>
               <%= form_tag(line_items_path , remote: true) do %>
               <%= hidden_field_tag "product_id", "#{line_item.product.id}"%>
-              <td><%= number_field_tag "quantity", line_item.quantity %>
+              <td><%= number_field_tag "quantity", nil, style: "width:50px;" %>
               <%= submit_tag 'Agregar' %></td>
               <% end %>
             </tr> 

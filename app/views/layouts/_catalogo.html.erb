@@ -74,7 +74,7 @@
     
   </tr>
   <tr class="tabla_contenido">
-       <td><%= select("product", "diameter_inside", @products.order("diameter_inside").collect {|p| [ p.diameter_inside, p.diameter_inside ] }.uniq, {include_blank: 'Todas'}) %> </td>
+       <td><%= select("product", "diameter_inside", @products.order("diameter_inside").collect {|p| [ (p.diameter_inside).round(3), (p.diameter_inside).round(3) ] }.uniq, {include_blank: 'Todas'}) %> </td>
        <td><%= select("product", "diameter_outside", @products.order("diameter_outside").collect {|p| [ p.diameter_outside, p.diameter_outside ] }.uniq, {include_blank: 'Todas'}) %></td>
       <td><%= select("product", "bolt_size_metric", @products.order("bolt_size_metric").collect {|p| [ p.bolt_size_metric, p.bolt_size_metric ] }.uniq, {include_blank: 'Todas'}) %></td>
       <td><%= select("product", "bolt_size_unc", @products.order("bolt_size_unc").collect {|p| [ p.bolt_size_unc, p.bolt_size_unc ] }.uniq, {include_blank: 'Todas'}) %></td>
@@ -92,18 +92,26 @@
     
     <div class="centrar">
       <table class="tabla_formato" width="900" border="0" cellpadding="0" cellspacing="0">
+     <tr class="tabla_encabezado_azul">
+        <td rowspan="2">Medida de </br> arandela</td>
+        <td rowspan="2">Medida <br> p[mm]</td>
+        <td rowspan="2">Medida <br> p[inch]</td>
+        <td colspan="3">[MM]</td>
+        <td colspan="3">[UNC]</td>
+        <td rowspan="2">Piezas x <br /> paquete</td>
+        <td rowspan="2">Peso</td>
+        <td rowspan="2">no. Art</td>        
+        <td rowspan="2" class="tabla_encabezado_griss">Cantidad por pares</td>  
+         <td rowspan="2"></td>
+      </tr>
       <tr class="tabla_encabezado_azul">
-        <td>Medida de <br /> arandela</td>
-        <td>Medida [mm]</td>
-        <td>Medida [inch]</td>
-        <td>Diametro <br />interno</td>
-        <td>Diametro <br />externo</td>
+        <td>Diametro <br>interno</td>
+        <td>Diametro <br>externo</td>
         <td>Grosor T</td>
-        <td>Piezas x <br /> paquete</td>
-        <td>Peso</td>
-        <td>no. Art</td>        
-        <td class="tabla_encabezado_griss">Cantidad por pares</td>
-         <td></td>
+        <td>Diametro <br>interno</td>
+        <td>Diametro <br>externo</td>
+        <td>Grosor T</td>        
+        <td>
       </tr>
       <tbody>
         
@@ -116,13 +124,16 @@
               <td><%= (product.diameter_inside).round(3) %></td>
               <td><%= (product.diameter_outside).round(3) %></td>
               <td><%= product.thickness_T %></td>
+              <td><%= product.diameter_inside_unc %></td>
+              <td><%= product.diameter_outside_unc %></td>
+              <td><%= product.thickness_T_unc %></td>              
               <td><%= product.min_package %></td>
               <td><%= (product.weight).round(2) %></td>
               <td><%= product.art_no %></td>
                <td>
               <%= form_tag(line_items_path , remote: true) do %>
                 <%= hidden_field_tag "product_id", "#{product.id}"%>
-               <%= number_field_tag "quantity" %>
+               <%= number_field_tag "quantity", nil, style: "width:50px;" %>
                 <%= submit_tag 'Agregar' %>
               <% end %>
               </td>
