@@ -113,11 +113,11 @@
               <td><%= product.washer_size %></td>
               <td><%= product.bolt_size_metric %></td>
               <td><%= product.bolt_size_unc %></td>
-              <td><%= product.diameter_inside %></td>
-              <td><%= product.diameter_outside %></td>
+              <td><%= (product.diameter_inside).round(3) %></td>
+              <td><%= (product.diameter_outside).round(3) %></td>
               <td><%= product.thickness_T %></td>
               <td><%= product.min_package %></td>
-              <td><%= product.weight %></td>
+              <td><%= (product.weight).round(2) %></td>
               <td><%= product.art_no %></td>
                <td>
               <%= form_tag(line_items_path , remote: true) do %>
