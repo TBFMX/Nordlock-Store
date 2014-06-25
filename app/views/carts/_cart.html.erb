@@ -1,13 +1,25 @@
-<h2>Your Cart</h2>
-<table>
-	<%= render(cart.line_items) %>
-	
-	<!--
-	<tr class="total_line">
-		<td colspan="2">Total</td>
-		<td class="total_cell"><%#= number_to_currency(cart.total_price) %></td>
-	</tr>
--->
-</table>
-<%= button_to "Pagar",  {:controller => "gateway",:action =>'index'}%>
-<%= button_to "Empty cart", {:controller => "carts",:action =>'destroy', :id => cart.id }, :method => :delete %>
+
+   <div class="centrar">
+      <table class="tabla_formato" width="300" border="0" cellpadding="0" cellspacing="0" style="position:fixed;top:0px;left:0px;">
+      <tr class="tabla_encabezado_azul">
+        <td colspan="2">Carrito</td>       
+      </tr>
+     <tr class="tabla_encabezado_azul">
+        <td>Medida de </br> arandela</td>      
+        <td class="tabla_encabezado_griss">Cantidad </br> por pares</td>  
+         <td></td>
+      </tr>
+      <tr class="tabla_encabezado_azul">
+      </tr>
+      <tbody>
+        <% @cart.line_items.each do |line_item| %>    
+            <tr class="tabla_contenido">
+              <td><%= line_item.product.washer_size %></td>
+              <%= form_tag(line_items_path , remote: true) do %>
+              <td><%= line_item.quantity %></td>
+              <% end %>
+            </tr> 
+        <% end %>  
+      </tbody>
+    </table>
+    </div> 
