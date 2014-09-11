@@ -898,7 +898,7 @@ a.olvidePass:hover { /*Mause sobre el link*/
 	.tabla_encabezado_gris{
 		padding: 6px;
 		margin: 3px;
-		color: #FFFFFF;s
+		color: #FFFFFF;
 		font-size:14px;
 		background-color: #66CCFF;
 		text-align: center;
@@ -988,9 +988,9 @@ a.olvidePass:hover { /*Mause sobre el link*/
 			    to   { opacity: 0; }
 			}​
 
-			/* Opera */
+			/* Opera 
 			@-o-keyframes fadein {
 			    from { opacity: 1; }
 			    50% { opacity: 1; }
 			    to   { opacity: 0; }
-			}​
+			}​*/
