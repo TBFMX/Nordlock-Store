@@ -106,14 +106,14 @@ ActiveRecord::Schema.define(version: 20140623235927) do
     t.string   "bolt_size_unc"
     t.decimal  "diameter_inside"
     t.decimal  "diameter_outside"
-    t.decimal  "thickness_T"
+    t.decimal  "thickness_t"
     t.integer  "min_package"
     t.decimal  "weight"
     t.integer  "art_no"
     t.string   "category"
     t.string   "diameter_inside_unc"
     t.string   "diameter_outside_unc"
-    t.string   "thickness_T_unc"
+    t.string   "thickness_t_unc"
     t.string   "torque"
   end
 
