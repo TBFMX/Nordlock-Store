@@ -70,7 +70,7 @@
        <td><%= select("product", "diameter_outside", @products.order("diameter_outside").collect {|p| [ p.diameter_outside, p.diameter_outside ] }.uniq, {include_blank: 'Todas'}) %></td>
       <td><%= select("product", "bolt_size_metric", @products.order("bolt_size_metric").collect {|p| [ p.bolt_size_metric, p.bolt_size_metric ] }.uniq, {include_blank: 'Todas'}) %></td>
       <td><%= select("product", "bolt_size_unc", @products.order("bolt_size_unc").collect {|p| [ p.bolt_size_unc, p.bolt_size_unc ] }.uniq, {include_blank: 'Todas'}) %></td>
-      <td><%= select("product", "thickness_T", @products.order("thickness_T").collect {|p| [ p.thickness_T, p.thickness_T ] }.uniq, {include_blank: 'Todas'}) %>
+      <td><%= select("product", "thickness_t", @products.order("thickness_t").collect {|p| [ p.thickness_t, p.thickness_t ] }.uniq, {include_blank: 'Todas'}) %>
       <%= hidden_field_tag "category", @cat %></td>
       <td></td>
       <td collspan="2"><%= submit_tag 'Filtrar' %></td>
@@ -113,10 +113,10 @@
               <td><%= product.bolt_size_unc %></td>
               <td><%= (product.diameter_inside).round(3) %></td>
               <td><%= (product.diameter_outside).round(3) %></td>
-              <td><%= product.thickness_T %></td>
+              <td><%= product.thickness_t %></td>
               <td><%= product.diameter_inside_unc %></td>
               <td><%= product.diameter_outside_unc %></td>
-              <td><%= product.thickness_T_unc %></td>              
+              <td><%= product.thickness_t_unc %></td>              
               <td><%= product.min_package %></td>
               <td><%= (product.weight).round(2) %></td>
               <td><%= product.art_no %></td>
