@@ -70,9 +70,9 @@ class Product < ActiveRecord::Base
             @cont += 1
         end
 
-        if !product[:thickness_T].blank?
-            @aux= @aux + 'and thickness_T = ? '
-            @aux2[@cont]=  product[:thickness_T].to_s
+        if !product[:thickness_t].blank?
+            @aux= @aux + 'and thickness_t = ? '
+            @aux2[@cont]=  product[:thickness_t].to_s
             @cont += 1
         end
        # if !product[:min_package].blank?

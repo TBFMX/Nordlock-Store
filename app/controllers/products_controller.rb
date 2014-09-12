@@ -69,7 +69,7 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :description, :image_url, :unit_price, :title, :description, :washer_size, :bolt_size_metric, :bolt_size_unc, :diameter_inside, :diameter_outside, :thickness_T, :min_package, :weight, :art_no, :category, :diameter_inside_unc, :diameter_outside_unc, :thickness_T_unc, :torque)
+      params.require(:product).permit(:title, :description, :image_url, :unit_price, :title, :description, :washer_size, :bolt_size_metric, :bolt_size_unc, :diameter_inside, :diameter_outside, :thickness_t, :min_package, :weight, :art_no, :category, :diameter_inside_unc, :diameter_outside_unc, :thickness_t_unc, :torque)
     end
      def autorizar
         unless session[:mod0] == true
